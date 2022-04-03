@@ -1,15 +1,21 @@
+from turtle import back
 from app.db import Base
 from sqlalchemy import Column, Integer, String
-from sqlalchemy.orm import validates
+from sqlalchemy.orm import validates, relationship
 import bcrypt
 
 salt = bcrypt.gensalt()
 
-class User(Base):
+class Users(Base):
   __tablename__ = 'users'
-  id = Column(Integer, primary_key=True)
-  user = Column(String(50), nullable=False)
-  password = Column(String(100), nullable=False)
+  id = Column('id', Integer, primary_key=True)
+  user = Column('user', String(50), nullable=False)
+  password = Column('password', String(100), nullable=False)
+  
+  
+  posts = relationship('Posts',  backref="user")
+  comments = relationship('Comments', backref="user")
+  
   
   @validates('email')
   def validate_email(self, key, email):
