@@ -1,3 +1,4 @@
+{% extends "layout/main.html" %} {% block body %}
 {% include 'partials/techblog-header.html' %}
 <main id="homepage_background">
     <div class="post pb-3">
@@ -6,7 +7,7 @@
             <div class="d-flex flex-column gap-1">
                 <div class="d-flex flex-column">
                     <label for="#editPostTitle">Title</label>
-                    <input type="text" id="editPostTitle" value="{{post.title}}">
+                    <input type="text" id="editPostTitle" value="{{post.title|capitalize_string}}">
                 </div>
                 <div class="d-flex flex-column">
                     <label for="#editPostContent">Content</label>
@@ -23,3 +24,5 @@
 
 <script src="/js/editPost.js"></script>
 <script src="/js/deletePost.js"></script>
+
+{% endblock %}

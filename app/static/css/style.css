@@ -41,9 +41,8 @@ nav {
 
 /* FOR TECHBLOG HEADER AND YOUR DASHBOARD PARTIALS */
 header {
-    height:15%;
+    height:10%;
     background-color: var(--brown);
-    padding: 2vh 0;
 }
 
 .pageTitle {
@@ -56,13 +55,14 @@ header {
     padding: 0.5vh;
     box-shadow: 0.75vh 0.75vh 0 var(--light-grey);
     margin: 0 30px!important;
+    transform: translateY(-1.5vh);
 }
 
 /* For the Homepage */
 #homepage_background {
     background-color: var(--mint);
     /* height: 84.25vh; */
-    height: 78%;
+    height: 83%;
     padding: 3vh 3vw;
 }
 
@@ -176,6 +176,7 @@ textarea {
     color: white;
     height: 90%;
     overflow-y: scroll;
+    flex-wrap: nowrap;
 }
 
 #yourPostsContainer::-webkit-scrollbar {
