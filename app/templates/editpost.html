@@ -1,0 +1,25 @@
+{% include 'partials/techblog-header.html' %}
+<main id="homepage_background">
+    <div class="post pb-3">
+        <h2 class="post_header">Edit Post</h2>
+        <form class="d-flex flex-column gap-3 login-signup_form">
+            <div class="d-flex flex-column gap-1">
+                <div class="d-flex flex-column">
+                    <label for="#editPostTitle">Title</label>
+                    <input type="text" id="editPostTitle" value="{{post.title}}">
+                </div>
+                <div class="d-flex flex-column">
+                    <label for="#editPostContent">Content</label>
+                    <textarea rows="3" id="editPostContent">{{post.description}}</textarea>
+                </div>
+            </div>
+            <div class="d-flex flex-column gap-2">
+                <input type="submit" id="updatePostButton" value="Update Post">
+                <input type="submit" id="deletePostButton" value="Delete">
+            </div>
+        </form>
+    </div>
+</main>
+
+<script src="/js/editPost.js"></script>
+<script src="/js/deletePost.js"></script>

@@ -1,0 +1,205 @@
+:root {
+    --mint: #D0E1CB;
+    --brown: #231010;
+    --light-grey: #A7A7A7;
+    --grey: #666666;
+}
+
+textarea:focus, input:focus{
+    outline: none;
+}
+
+h1, h2, h3, h4, h5, h6, label {
+    margin:0!important;
+}
+
+body {
+    height: 100vh;
+}
+
+a {
+    text-decoration: none!important;
+    font-size: 2vh;
+    color: var(--mint) !important;
+}
+
+#navbar {
+    height:7%;
+    background-color: var(--brown);
+    padding:0 3vw;
+}
+
+nav {
+    /* height:7%; */
+    padding: 1vh 0;
+    color:var(--mint)!important;
+}
+
+#welcomeName {
+    color: var(--mint);
+}
+
+/* FOR TECHBLOG HEADER AND YOUR DASHBOARD PARTIALS */
+header {
+    height:15%;
+    background-color: var(--brown);
+    padding: 2vh 0;
+}
+
+.pageTitle {
+    background-color: var(--mint);
+    color: var(--brown);
+    font-size: 34px;
+    border-radius: 10px;
+    font-weight: bold;
+    text-align: center;
+    padding: 0.5vh;
+    box-shadow: 0.75vh 0.75vh 0 var(--light-grey);
+    margin: 0 30px!important;
+}
+
+/* For the Homepage */
+#homepage_background {
+    background-color: var(--mint);
+    /* height: 84.25vh; */
+    height: 78%;
+    padding: 3vh 3vw;
+}
+
+.post {
+    border: 4px var(--brown) solid;
+}
+
+.post_header {
+    background-color: var(--brown);
+    color: var(--mint);
+    padding:1vh 2vw;
+}
+
+.post_title {
+    font-size: 24px;
+}
+
+.post_title:hover {
+    cursor: pointer;
+}
+
+.post_info {
+    font-size: 12px;
+}
+
+.post_description {
+    font-size: 18px;
+    background-color: var(--mint);
+    margin: 0;
+    line-height: 1.5;
+    padding:1.5vh 2vw;
+}
+
+/* Log in and Sign Up page */
+
+.login-signup_form {
+    padding: 0 2vh;
+}
+
+#usernameInputSignIn,
+#passwordInputSignIn,
+#usernameInputSignUp,
+#passwordInputSignUp,
+#newPostTitle,
+#editPostTitle {
+    border: none;
+    height: 40px;
+    padding: 20px!important;
+}
+
+#loginButton,
+#signupButton,
+#submitCommentButton,
+#deletePostButton,
+#updatePostButton,
+#submitPostButton {
+    border: none;
+    border-radius: 6px;
+    background-color: var(--grey);
+    padding:7px 0;
+    font-size: 20px;
+    color: white;
+    transition: .2s ease-in-out;
+}
+
+#loginButton:hover,
+#signupButton:hover,
+#submitCommentButton:hover,
+#deletePostButton:hover,
+#updatePostButton:hover,
+#submitPostButton:hover {
+    background-color: #3b3b3b;
+}
+
+
+.redirectLink {
+    padding: 0 2vw;
+}
+
+.redirectLink {
+    color:black!important;
+}
+
+/* Thread Page */
+textarea {
+    border: none;
+    padding: 10px 20px!important
+}
+
+#commentSection {
+    height:70%;
+    overflow-y: scroll;
+};
+
+#commentSection::-webkit-scrollbar {
+    display: none;
+}
+
+/* Your Dashboard */
+#createPostButton {
+    background-color: var(--brown);
+    color: white;
+    border-radius: 6px;
+    border: none;
+    padding:7px 22px;
+    font-size: 24px;
+    margin: 0 auto;
+}
+
+#yourPostsContainer {
+    color: white;
+    height: 90%;
+    overflow-y: scroll;
+}
+
+#yourPostsContainer::-webkit-scrollbar {
+    display: none;
+}
+
+#yourPostsContainer div {
+    background-color: var(--grey);
+    padding: 10px;
+    border-radius: 6px;
+    transition: .3s ease-in-out;
+}
+
+#yourPostsContainer div:hover {
+    cursor: pointer;
+    background-color: #3b3b3b;
+}
+
+#yourPostsContainer div h3 {
+    font-size: 20px;
+}
+
+@media screen and (max-width: 500px) {
+    #welcomeName {
+        display:none;
+    }
+}

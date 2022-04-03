@@ -1,0 +1,39 @@
+{% include 'partials/techblog-header.html' %}
+
+<main id="homepage_background" class="d-flex flex-column gap-4 flex-no-wrap">
+    <div class="post">
+        <div class="d-flex justify-content-between align-items-end post_header">
+            <h2 class="post_title">{{post.title}}</h2>
+            <h6 class="post_info">Posted by {{post.user.user}} on {{post.created_at}}</h6>
+        </div>
+        <h3 class="post_description">{{post.description}}</h3>
+    </div>
+
+    <div id="commentSection" class="d-flex flex-column gap-2 flex-no-wrap">
+        {% for comment in comments%}
+        <div class="post">
+            <div class="post_header"></div>
+            <form class="post_description d-flex flex-column gap-3">
+                <div class="d-flex flex-column gap-3">
+                    <h6>{{this.content}}</h6>
+                    <h6>--{{user.user}}, {{format_date this.createdAt}}</h6>
+                </div>
+            </form>
+        </div>
+        {% endfor %}
+    </div>
+    {% if loggedIn %}
+    <div class="post">
+        <div class="post_header">
+        </div>
+        <form class="post_description d-flex flex-column gap-3">
+            <div class="d-flex flex-column">
+                <label for=".commentInput">Comment</label>
+                <textarea type="text" rows="2" class="commentInput"></textarea>
+            </div>
+            <input type="submit" id="submitCommentButton">
+        </form>
+    </div>
+    <script src="/js/postComment.js"></script>
+    {% endif %}
+</main>

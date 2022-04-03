@@ -1,0 +1,22 @@
+{% include 'partials/techblog-header.html' %}
+<main id="homepage_background">
+    <div class="post pb-3">
+        <h2 class="post_header">Login</h2>
+        <form class="d-flex flex-column gap-3 login-signup_form">
+            <div class="d-flex flex-column gap-1">
+                <div class="d-flex flex-column">
+                    <label for="#usernameInputSignIn">Username</label>
+                    <input type="text" id="usernameInputSignIn">
+                </div>
+                <div class="d-flex flex-column">
+                    <label for="#passwordInputSignIn">Password</label>
+                    <input type="password" id="passwordInputSignIn">
+                </div>
+            </div>
+            <input type="submit" id="loginButton" value="Login!">
+        </form>
+        <a href="/signup" class="redirectLink">Sign up instead</a>
+    </div>
+</main>
+
+<script src="js/login.js"></script>
