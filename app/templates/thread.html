@@ -10,13 +10,13 @@
     </div>
 
     <div id="commentSection" class="d-flex flex-column gap-2 flex-no-wrap">
-        {% for comment in comments%}
+        {% for comment in comments %}
         <div class="post">
             <div class="post_header"></div>
             <form class="post_description d-flex flex-column gap-3">
                 <div class="d-flex flex-column gap-3">
-                    <h6>{{this.content}}</h6>
-                    <h6>--{{user.user}}, {{format_date this.createdAt}}</h6>
+                    <h6>{{comment.content}}</h6>
+                    <h6>{{comment.user.user}}, {{comment.created_at}}</h6>
                 </div>
             </form>
         </div>

@@ -1,10 +1,10 @@
 {% include 'partials/yourdashboard-header.html' %}
 <main id="homepage_background" class="d-flex flex-column gap-4 flex-no-wrap">
     <div id="yourPostsContainer" class="d-flex flex-column gap-3">
-        {% for post in posts %%}
+        {% for post in posts %}
         <div class="d-flex justify-content-between individual-post" data-post-id="{{post.id}}">
             <h3>{{post.title}}</h3>
-            <h3>{{format_date post.created_at}}</h3>
+            <h3>{{post.created_at}}</h3>
         </div>
         {% endfor %}
     </div>
