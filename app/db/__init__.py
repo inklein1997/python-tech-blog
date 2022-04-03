@@ -15,21 +15,21 @@ Base = declarative_base()
 
 
 def init_db(app):
-    Base.metadata.create_all(engine)
-    app.teardown_appcontext(close_db)
+  Base.metadata.create_all(engine)
+
+  app.teardown_appcontext(close_db)
 
 
-# returns a new session-connection object.  However, we do not want to create multiple connections at the same time.
 def get_db():
-    if 'db' not in g:
-        # store db connection in app context
-        g.db = Session()
+  if 'db' not in g:
+    # store db connection in app context
+    g.db = Session()
 
-    return g.db
+  return g.db
 
 
 def close_db(e=None):
-    db = g.pop('db', None)
+  db = g.pop('db', None)
 
-    if db is not None:
-        db.close()
+  if db is not None:
+    db.close()
