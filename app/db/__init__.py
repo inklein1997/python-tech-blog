@@ -8,19 +8,28 @@ from flask import g
 load_dotenv()
 
 # connect to database using env variable
-engine = create_engine(getenv('DB_URL'), echo=True, pool_size=20, max_overflow=0)
+engine = create_engine(getenv('DB_URL'), echo=True,
+                       pool_size=20, max_overflow=0)
 Session = sessionmaker(bind=engine)
 Base = declarative_base()
 
+
 def init_db(app):
-  Base.metadata.create_all(engine)
-  app.teardown_appcontext(close_db)
-  
-  
+    Base.metadata.create_all(engine)
+    app.teardown_appcontext(close_db)
+
+
 # returns a new session-connection object.  However, we do not want to create multiple connections at the same time.
 def get_db():
-  if 'db' not in g:
-    # store db connection in app context
-    g.db = Session()
-    
-  return g.db
+    if 'db' not in g:
+        # store db connection in app context
+        g.db = Session()
+
+    return g.db
+
+
+def close_db(e=None):
+    db = g.pop('db', None)
+
+    if db is not None:
+        db.close()
