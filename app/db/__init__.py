@@ -12,8 +12,9 @@ engine = create_engine(getenv('DB_URL'), echo=True, pool_size=20, max_overflow=0
 Session = sessionmaker(bind=engine)
 Base = declarative_base()
 
-def init_db():
+def init_db(app):
   Base.metadata.create_all(engine)
+  app.teardown_appcontext(close_db)
   
   
 # returns a new session-connection object.  However, we do not want to create multiple connections at the same time.
